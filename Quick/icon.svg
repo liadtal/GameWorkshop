@@ -1,0 +1,21 @@
+<svg height="128" width="128" xmlns="http://www.w3.org/2000/svg">
+  <rect width="128" height="128" rx="16" fill="#f0e6d3"/>
+  <!-- Quicky body -->
+  <circle cx="64" cy="68" r="32" fill="white" stroke="#333" stroke-width="2"/>
+  <!-- Left ear -->
+  <ellipse cx="48" cy="40" rx="10" ry="14" fill="white" stroke="#333" stroke-width="2"/>
+  <ellipse cx="48" cy="42" rx="5" ry="8" fill="#ffb6c1"/>
+  <!-- Right ear -->
+  <ellipse cx="80" cy="40" rx="10" ry="14" fill="white" stroke="#333" stroke-width="2"/>
+  <ellipse cx="80" cy="42" rx="5" ry="8" fill="#ffb6c1"/>
+  <!-- Left eye -->
+  <circle cx="54" cy="62" r="4" fill="#111"/>
+  <circle cx="55.5" cy="60.5" r="1.5" fill="white"/>
+  <!-- Right eye -->
+  <circle cx="74" cy="62" r="4" fill="#111"/>
+  <circle cx="75.5" cy="60.5" r="1.5" fill="white"/>
+  <!-- Nose -->
+  <ellipse cx="64" cy="72" rx="3" ry="2.5" fill="#ff8fa0"/>
+  <!-- Mouth -->
+  <path d="M60 76 Q64 80 68 76" fill="none" stroke="#555" stroke-width="1.2"/>
+</svg>

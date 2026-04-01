@@ -1,0 +1,17 @@
+# Godot 4 generated files
+.godot/
+
+# Exported builds
+export/
+*.exe
+*.pck
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor backups
+*.tmp
+*.bak
+*~

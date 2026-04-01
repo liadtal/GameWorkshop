@@ -1,0 +1,222 @@
+[gd_scene format=3 uid="uid://bwo5u4g88ifcr"]
+
+[ext_resource type="Script" uid="uid://c0x1mbr8wbcb2" path="res://scripts/game.gd" id="1_game"]
+[ext_resource type="Script" uid="uid://mn8r3jk67lf0" path="res://scripts/grid.gd" id="2_grid"]
+[ext_resource type="Script" uid="uid://dvtbvlexr232g" path="res://scripts/player.gd" id="3_player"]
+[ext_resource type="Script" uid="uid://d03d0wvdcrdh6" path="res://scripts/key_inventory.gd" id="4_keyinv"]
+
+[node name="Game" type="Node2D" unique_id=1543938574]
+process_mode = 3
+script = ExtResource("1_game")
+
+[node name="Grid" type="Node2D" parent="." unique_id=1262661939]
+script = ExtResource("2_grid")
+
+[node name="Player" type="Node2D" parent="." unique_id=1246971842]
+script = ExtResource("3_player")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1424495810]
+position = Vector2(400, 300)
+
+[node name="HUDLayer" type="CanvasLayer" parent="." unique_id=499205369]
+layer = 10
+
+[node name="KeyInventory" type="Control" parent="HUDLayer" unique_id=792244072]
+layout_mode = 3
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -200.0
+offset_bottom = 60.0
+grow_horizontal = 0
+script = ExtResource("4_keyinv")
+
+[node name="LevelTitle" type="Label" parent="HUDLayer" unique_id=1365554614]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 8.0
+offset_right = 200.0
+offset_bottom = 32.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0.6)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 18
+horizontal_alignment = 1
+
+[node name="DifficultyLabel" type="Label" parent="HUDLayer" unique_id=923958563]
+offset_left = 10.0
+offset_top = 8.0
+offset_right = 160.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(1, 1, 1, 0.5)
+theme_override_font_sizes/font_size = 13
+
+[node name="OverlayLayer" type="CanvasLayer" parent="." unique_id=756390669]
+process_mode = 3
+layer = 20
+
+[node name="DeathOverlay" type="ColorRect" parent="OverlayLayer" unique_id=2040592832]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.15, 0, 0, 0.65)
+
+[node name="VBox" type="VBoxContainer" parent="OverlayLayer/DeathOverlay" unique_id=381946172]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -80.0
+offset_right = 120.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Title" type="Label" parent="OverlayLayer/DeathOverlay/VBox" unique_id=2002040932]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.3, 0.3, 1)
+theme_override_font_sizes/font_size = 28
+text = "Quicky crashed!"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="OverlayLayer/DeathOverlay/VBox" unique_id=958356851]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="RestartBtn" type="Button" parent="OverlayLayer/DeathOverlay/VBox" unique_id=30015843]
+custom_minimum_size = Vector2(180, 36)
+layout_mode = 2
+focus_neighbor_top = NodePath("../MenuBtn")
+focus_neighbor_bottom = NodePath("../MenuBtn")
+text = "Restart (R)"
+
+[node name="MenuBtn" type="Button" parent="OverlayLayer/DeathOverlay/VBox" unique_id=362023491]
+custom_minimum_size = Vector2(180, 36)
+layout_mode = 2
+focus_neighbor_top = NodePath("../RestartBtn")
+focus_neighbor_bottom = NodePath("../RestartBtn")
+text = "Back to Menu"
+
+[node name="WinOverlay" type="ColorRect" parent="OverlayLayer" unique_id=765592518]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.1, 0, 0.65)
+
+[node name="VBox" type="VBoxContainer" parent="OverlayLayer/WinOverlay" unique_id=169806849]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -80.0
+offset_right = 120.0
+offset_bottom = 80.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Title" type="Label" parent="OverlayLayer/WinOverlay/VBox" unique_id=2083670485]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.3, 1, 0.4, 1)
+theme_override_font_sizes/font_size = 28
+text = "Level Complete!"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="OverlayLayer/WinOverlay/VBox" unique_id=2096121403]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="NextLevelBtn" type="Button" parent="OverlayLayer/WinOverlay/VBox" unique_id=1072470592]
+custom_minimum_size = Vector2(180, 36)
+layout_mode = 2
+focus_neighbor_top = NodePath("../MenuBtn")
+focus_neighbor_bottom = NodePath("../MenuBtn")
+text = "Next Level"
+
+[node name="MenuBtn" type="Button" parent="OverlayLayer/WinOverlay/VBox" unique_id=717575510]
+custom_minimum_size = Vector2(180, 36)
+layout_mode = 2
+focus_neighbor_top = NodePath("../NextLevelBtn")
+focus_neighbor_bottom = NodePath("../NextLevelBtn")
+text = "Back to Menu"
+
+[node name="PauseOverlay" type="ColorRect" parent="OverlayLayer" unique_id=2096898652]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="VBox" type="VBoxContainer" parent="OverlayLayer/PauseOverlay" unique_id=2139174326]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -100.0
+offset_right = 120.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Title" type="Label" parent="OverlayLayer/PauseOverlay/VBox" unique_id=1706767511]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 28
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="OverlayLayer/PauseOverlay/VBox" unique_id=1957647050]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="ResumeBtn" type="Button" parent="OverlayLayer/PauseOverlay/VBox" unique_id=1159643436]
+custom_minimum_size = Vector2(180, 36)
+layout_mode = 2
+focus_neighbor_top = NodePath("../MenuBtn")
+focus_neighbor_bottom = NodePath("../RestartBtn")
+text = "Resume"
+
+[node name="RestartBtn" type="Button" parent="OverlayLayer/PauseOverlay/VBox" unique_id=175411308]
+custom_minimum_size = Vector2(180, 36)
+layout_mode = 2
+focus_neighbor_top = NodePath("../ResumeBtn")
+focus_neighbor_bottom = NodePath("../MenuBtn")
+text = "Restart"
+
+[node name="MenuBtn" type="Button" parent="OverlayLayer/PauseOverlay/VBox" unique_id=329502864]
+custom_minimum_size = Vector2(180, 36)
+layout_mode = 2
+focus_neighbor_top = NodePath("../RestartBtn")
+focus_neighbor_bottom = NodePath("../ResumeBtn")
+text = "Main Menu"
+
+[connection signal="pressed" from="OverlayLayer/DeathOverlay/VBox/RestartBtn" to="." method="_on_restart"]
+[connection signal="pressed" from="OverlayLayer/DeathOverlay/VBox/MenuBtn" to="." method="_on_back_to_menu"]
+[connection signal="pressed" from="OverlayLayer/WinOverlay/VBox/NextLevelBtn" to="." method="_on_next_level"]
+[connection signal="pressed" from="OverlayLayer/WinOverlay/VBox/MenuBtn" to="." method="_on_back_to_menu"]
+[connection signal="pressed" from="OverlayLayer/PauseOverlay/VBox/ResumeBtn" to="." method="_on_resume"]
+[connection signal="pressed" from="OverlayLayer/PauseOverlay/VBox/RestartBtn" to="." method="_on_restart"]
+[connection signal="pressed" from="OverlayLayer/PauseOverlay/VBox/MenuBtn" to="." method="_on_back_to_menu"]
