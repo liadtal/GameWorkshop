@@ -1,0 +1,72 @@
+# Product Requirements Document (PRD)
+
+## Game Title: Rock-Paper-Scissors: Last Life
+
+### Overview
+A simple, high-stakes Rock-Paper-Scissors game built with the Godot game engine. The player faces off against the computer. The player starts with 3 lives. Each time the player loses a round, they lose a life. If all lives are lost, the game ends with a defeat. The goal is to survive as long as possible.
+
+---
+
+## Core Gameplay
+- The player chooses rock, paper, or scissors each round.
+- The computer randomly selects its move.
+- The winner is determined by standard rules:
+    - Rock beats Scissors
+    - Scissors beats Paper
+    - Paper beats Rock
+- If the player loses a round, they lose one life.
+- The player starts with 3 lives. When all lives are lost, the game ends.
+- If the player wins or draws, the game continues.
+
+---
+
+## User Interface
+- Main menu with Start and Quit options.
+- Game screen:
+    - Display player's remaining lives (hearts or icons).
+    - Buttons or icons for player to select rock, paper, or scissors.
+    - Display computer's choice after player selects.
+    - Show round result (win, lose, draw).
+    - Option to restart or quit after game over.
+
+---
+
+## Art & Audio
+- Simple, clear icons for rock, paper, scissors.
+- Visual representation of lives (e.g., hearts).
+- Basic sound effects for win, lose, draw, and button clicks.
+- Optional: background music.
+
+---
+
+## Technical Requirements
+- Built with Godot (suggested: Godot 4.x).
+- All logic handled in GDScript.
+- Responsive UI for desktop (Windows).
+- Clean, modular code structure.
+
+---
+
+## Stretch Goals (Optional)
+- Score counter for consecutive wins.
+- High score tracking.
+- Animations for choices and results.
+- Difficulty levels (e.g., smarter computer AI).
+
+---
+
+## Acceptance Criteria
+- Player can play multiple rounds until all lives are lost.
+- UI clearly shows lives, choices, and results.
+- Game is playable from start to finish with no critical bugs.
+- All assets are free to use or original.
+
+---
+
+## Milestones
+1. Project setup in Godot
+2. Implement core game logic
+3. Build UI and connect to logic
+4. Add art and sound
+5. Playtesting and polish
+6. Final review and release

@@ -1,0 +1,11 @@
+63f7b34db8d8cdea90c76aacccf841ec
+::res://::1775029894
+::res://scenes/::1775029740
+game.tscn::PackedScene::-1::1775029725::0::1::::<><><>0<>0<><>::res://scripts/game.gd
+game_over.tscn::PackedScene::-1::1775029742::0::1::::<><><>0<>0<><>::res://scripts/game_over.gd
+main_menu.tscn::PackedScene::-1::1775029693::0::1::::<><><>0<>0<><>::res://scripts/main_menu.gd
+::res://scripts/::1775029740
+game.gd::GDScript::515086271717735996::1775029725::0::1::::<>Control<><>0<>0<><>::
+game_over.gd::GDScript::7449442077098092455::1775029741::0::1::::<>Control<><>0<>0<><>::
+game_state.gd::GDScript::4052961907012308355::1775029675::0::1::::<>Node<><>0<>0<><>::
+main_menu.gd::GDScript::6329945972729747232::1775029692::0::1::::<>Control<><>0<>0<><>::

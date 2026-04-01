@@ -1,0 +1,11 @@
+res://scenes/Door.tscn
+res://scenes/Goblin.tscn
+res://scenes/Wizard.tscn
+res://scripts/Door.gd
+res://scripts/GameState.gd
+res://scripts/Goblin.gd
+res://scripts/HUD.gd
+res://scripts/Level1.gd
+res://scripts/Main.gd
+res://scripts/Wizard.gd
+res://scripts/LevelLoader.gd
